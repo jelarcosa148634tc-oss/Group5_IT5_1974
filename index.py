@@ -1,51 +1,72 @@
 import streamlit as st
 
-# Page configuration
 st.set_page_config(
-    page_title="Laundry Shop Management System",
+    page_title="Laundry Management System",
     page_icon="🧺",
     layout="wide"
 )
 
-# Homepage
-st.title("🧺 Laundry Shop Management System")
+# SIDEBAR
+st.sidebar.title("🧺 Laundry System")
+st.sidebar.caption("Management System")
 
-st.header("Welcome to our Laundry Shop!")
+st.sidebar.divider()
 
-st.write(
-    "Your convenient laundry service. "
-    "Submit your order online and bring your laundry "
-    "to our shop for processing."
+menu = st.sidebar.radio(
+    "Navigation",
+    [
+        "Dashboard",
+        "Place an Order",
+        "My Orders",
+        "Services",
+        "Account"
+    ]
 )
 
-st.divider()
+st.sidebar.divider()
 
-# Services
-st.subheader("Our Services")
+st.sidebar.button("Logout", use_container_width=True)
 
-col1, col2, col3 = st.columns(3)
+# MAIN CONTENT
+if menu == "Dashboard":
 
-with col1:
-    st.markdown("### 🧼 Wash & Fold")
-    st.write("Laundry washing and folding service.")
+    st.title("Dashboard")
+    st.write("Welcome to our Laundry Shop Management System!")
 
-with col2:
-    st.markdown("### 🌬️ Wash & Dry")
-    st.write("Laundry washing and drying service.")
+    col1, col2, col3 = st.columns(3)
 
-with col3:
-    st.markdown("### ✨ Full Service")
-    st.write("Wash, dry, and fold your laundry.")
+    with col1:
+        st.metric("My Orders", 0)
 
-st.divider()
+    with col2:
+        st.metric("Processing", 0)
 
-# Order button
-st.subheader("Ready to do your laundry?")
+    with col3:
+        st.metric("Ready for Pickup", 0)
 
-st.write(
-    "Place your order online and bring your laundry "
-    "to our shop."
-)
+    st.subheader("Welcome!")
 
-if st.button("Place an Order"):
-    st.info("Order placement will be available soon!")
+    st.write(
+        "Manage your laundry orders conveniently "
+        "through our online system."
+    )
+
+elif menu == "Place an Order":
+
+    st.title("Place an Order")
+    st.write("Submit your laundry order here.")
+
+elif menu == "My Orders":
+
+    st.title("My Orders")
+    st.write("View and track your laundry orders.")
+
+elif menu == "Services":
+
+    st.title("Our Services")
+    st.write("Explore our available laundry services.")
+
+elif menu == "Account":
+
+    st.title("My Account")
+    st.write("Manage your account information.")
