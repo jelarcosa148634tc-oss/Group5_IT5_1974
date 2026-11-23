@@ -2,7 +2,7 @@ import streamlit as st
 
 from styles import load_styles
 from database import initialize_db, get_orders, get_services
-
+from pages import place_order
 
 # ==========================================
 # 1. APPLICATION CONFIGURATION
@@ -166,17 +166,7 @@ if role == "Customer":
 
     elif page == "Place an Order":
 
-        st.title("🧺 Place an Order")
-
-        st.write(
-            "Submit your laundry details "
-            "to create an online order."
-        )
-
-        st.info(
-            "The order form will be developed "
-            "in our Place Order page."
-        )
+        place_order.render()
 
 
     elif page == "My Orders":
