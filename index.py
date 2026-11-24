@@ -12,6 +12,7 @@ from pages import update_status
 from pages import pending_orders
 from pages import admin_dashboard
 from pages import manage_services
+from pages import manage_orders
 
 # ==========================================
 # 1. APPLICATION CONFIGURATION
@@ -280,12 +281,7 @@ elif role == "Admin":
 
 
     elif page == "Manage Orders":
-
-        st.title("📋 Manage Orders")
-
-        st.info(
-            "Admin order monitoring will be developed here."
-        )
+    manage_orders.render()
 
 
     elif page == "Reports":
