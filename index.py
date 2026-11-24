@@ -7,6 +7,7 @@ from pages import my_orders
 from pages import services as services_page
 from pages import staff_dashboard
 from pages import receive_laundry
+from pages import payments
 
 # ==========================================
 # 1. APPLICATION CONFIGURATION
@@ -238,12 +239,7 @@ elif role == "Staff":
 
 
     elif page == "Payments":
-
-        st.title("💰 Payments")
-
-        st.info(
-            "Staff will record customer payments here."
-        )
+        payments.render()
 
 
     elif page == "Update Order Status":
