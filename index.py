@@ -8,6 +8,8 @@ from pages import services as services_page
 from pages import staff_dashboard
 from pages import receive_laundry
 from pages import payments
+from pages import update_status
+from pages import pending_orders
 
 # ==========================================
 # 1. APPLICATION CONFIGURATION
@@ -226,12 +228,7 @@ elif role == "Staff":
 
 
     elif page == "Pending Orders":
-
-        st.title("📋 Pending Orders")
-
-        st.info(
-            "Pending online orders will be displayed here."
-        )
+        pending_orders.render()
 
 
     elif page == "Receive Laundry":
@@ -243,12 +240,7 @@ elif role == "Staff":
 
 
     elif page == "Update Order Status":
-
-        st.title("🔄 Update Order Status")
-
-        st.info(
-            "Staff will update the laundry progress here."
-        )
+        update_status.render()
 
 
 # ==========================================
