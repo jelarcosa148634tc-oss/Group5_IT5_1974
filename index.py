@@ -3,6 +3,7 @@ import streamlit as st
 from styles import load_styles
 from database import initialize_db, get_orders, get_services
 from pages import place_order
+from pages import my_orders
 
 # ==========================================
 # 1. APPLICATION CONFIGURATION
@@ -170,17 +171,7 @@ if role == "Customer":
 
 
     elif page == "My Orders":
-
-        st.title("📦 My Orders")
-
-        st.write(
-            "Track your laundry order status."
-        )
-
-        st.info(
-            "Order tracking will be developed "
-            "in our My Orders page."
-        )
+        my_orders.render()
 
 
     elif page == "Services":
