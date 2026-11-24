@@ -6,6 +6,7 @@ from pages import place_order
 from pages import my_orders
 from pages import services as services_page
 from pages import staff_dashboard
+from pages import receive_laundry
 
 # ==========================================
 # 1. APPLICATION CONFIGURATION
@@ -233,13 +234,7 @@ elif role == "Staff":
 
 
     elif page == "Receive Laundry":
-
-        st.title("🧺 Receive Laundry")
-
-        st.info(
-            "Staff will verify orders, weigh laundry, "
-            "and confirm the final price here."
-        )
+        receive_laundry.render()
 
 
     elif page == "Payments":
