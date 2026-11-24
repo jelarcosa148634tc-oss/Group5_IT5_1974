@@ -11,6 +11,7 @@ from pages import payments
 from pages import update_status
 from pages import pending_orders
 from pages import admin_dashboard
+from pages import manage_services
 
 # ==========================================
 # 1. APPLICATION CONFIGURATION
@@ -275,12 +276,7 @@ elif role == "Admin":
 
 
     elif page == "Manage Services":
-
-        st.title("🧼 Manage Services")
-
-        st.info(
-            "Service management will be developed here."
-        )
+        manage_services.render()
 
 
     elif page == "Manage Orders":
