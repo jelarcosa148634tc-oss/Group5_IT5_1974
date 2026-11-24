@@ -5,6 +5,7 @@ from database import initialize_db, get_orders, get_services
 from pages import place_order
 from pages import my_orders
 from pages import services as services_page
+from pages import staff_dashboard
 
 # ==========================================
 # 1. APPLICATION CONFIGURATION
@@ -185,12 +186,7 @@ if role == "Customer":
 elif role == "Staff":
 
     if page == "Dashboard":
-
-        st.title("👨‍💼 Staff Dashboard")
-
-        st.write(
-            "Welcome to the staff workspace."
-        )
+        staff_dashboard.render()
 
         col1, col2, col3, col4 = st.columns(4)
 
