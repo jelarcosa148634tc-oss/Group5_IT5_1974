@@ -13,6 +13,7 @@ from pages import pending_orders
 from pages import admin_dashboard
 from pages import manage_services
 from pages import manage_orders
+from pages import reports
 
 # ==========================================
 # 1. APPLICATION CONFIGURATION
@@ -281,13 +282,8 @@ elif role == "Admin":
 
 
     elif page == "Manage Orders":
-    manage_orders.render()
+        manage_orders.render()
 
 
     elif page == "Reports":
-
-        st.title("📊 Reports")
-
-        st.info(
-            "Business reports will be developed here."
-        )
+        reports.render()
