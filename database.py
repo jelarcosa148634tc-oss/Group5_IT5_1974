@@ -91,6 +91,37 @@ def add_service(name, description, price):
 
         conn.commit()
 
+#Get servvice og add service
+def get_all_services():
+    with connect() as conn:
+        return conn.execute("""
+            SELECT id, name, description, price_per_kg, active
+            FROM services
+            ORDER BY id
+        """).fetchall()
+
+
+def update_service(service_id, name, description, price):
+    with connect() as conn:
+        conn.execute("""
+            UPDATE services
+            SET name = ?,
+                description = ?,
+                price_per_kg = ?
+            WHERE id = ?
+        """, (name, description, price, service_id))
+        conn.commit()
+
+
+def deactivate_service(service_id):
+    with connect() as conn:
+        conn.execute("""
+            UPDATE services
+            SET active = 0
+            WHERE id = ?
+        """, (service_id,))
+        conn.commit()
+
 
 # Submit a laundry order
 def create_order(
@@ -186,3 +217,4 @@ def record_payment(order_id):
         """, (order_id,))
 
         conn.commit()
+
