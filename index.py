@@ -4,6 +4,7 @@ from styles import load_styles
 from database import initialize_db, get_orders, get_services
 from pages import place_order
 from pages import my_orders
+from pages import services as services_page
 
 # ==========================================
 # 1. APPLICATION CONFIGURATION
@@ -175,25 +176,7 @@ if role == "Customer":
 
 
     elif page == "Services":
-
-        st.title("✨ Our Services")
-
-        st.write(
-            "Explore our available laundry services."
-        )
-
-        for service in services:
-
-            with st.container(border=True):
-
-                st.subheader(service[1])
-
-                st.write(service[2])
-
-                st.markdown(
-                    f"**₱{service[3]:,.2f} per kg**"
-                )
-
+        services_page.render()
 
 # ==========================================
 # STAFF PAGES
