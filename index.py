@@ -10,6 +10,7 @@ from pages import receive_laundry
 from pages import payments
 from pages import update_status
 from pages import pending_orders
+from pages import admin_dashboard
 
 # ==========================================
 # 1. APPLICATION CONFIGURATION
@@ -250,12 +251,7 @@ elif role == "Staff":
 elif role == "Admin":
 
     if page == "Dashboard":
-
-        st.title("⚙️ Admin Dashboard")
-
-        st.write(
-            "Monitor the laundry shop operations."
-        )
+        admin_dashboard.render()
 
         col1, col2, col3 = st.columns(3)
 
